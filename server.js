@@ -5,6 +5,9 @@ import mongoose from "mongoose";
 import {MongoClient, ServerApiVersion} from 'mongodb'
 import compartementRouter from './app/routes/compartementRoutes.js' 
 import parcelsRouter from "./app/routes/parcelsRoutes.js";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 const app = express();
 
@@ -19,6 +22,7 @@ const client = new MongoClient(dbUrl.url, { useNewUrlParser: true, useUnifiedTop
  const connect = () => {
     try {
         client.connect()
+        console.log("connected")
     } catch (e) {
         console.error(e);
       
@@ -39,7 +43,7 @@ app.get('/', (req, res) =>{
     res.json({message: "Welcome to Parcels Application"})
 })
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.NODE_LOCAL_PORT || 8080;
 
 app.listen(PORT, () =>{
     console.log(`Server is running on port: ${PORT}`)
