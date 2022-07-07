@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import dbUrl from "./app/config/config.js";
-import mongoose from "mongoose";
 import {MongoClient, ServerApiVersion} from 'mongodb'
 import compartementRouter from './app/routes/compartementRoutes.js' 
 import parcelsRouter from "./app/routes/parcelsRoutes.js";

@@ -1,5 +1,4 @@
 
-import compartementModel from "../models/compartementModel.js";
 import connect from '../../server.js'
 
 const addParcels = async (req, res) => {
